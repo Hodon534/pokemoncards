@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Started</title>
+</head>
+<body>
+<nav class="navbar" style="background-color: #e3f2fd" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="http://localhost:8080/">
+            <img src="images/pokemon-logo.png" alt="Pokemon logo" width="139" height="50">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+</nav>
+
+</body>
+
+<form action="/api/v1/pokemoncards/all" method="get">
+    <input type="submit" value="Show All Cards" />
+</form>
+
+<form action="/api/v1/pokemoncards/all" method="get">
+    <input type="submit" value="Show All Cards" />
+</form>
+</html>

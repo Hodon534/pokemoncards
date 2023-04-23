@@ -46,4 +46,8 @@ public class PokemonCardService {
         pokemonCardsRepo.deletePokemonCardById(id);
     }
 
+    public void deleteAll() {
+        pokemonCardsRepo.deleteAll();
+    }
+
 }

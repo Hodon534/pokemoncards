@@ -31,30 +31,26 @@ ul.topnav li.right {float: right;}
 
 .button1 {
     background-color: #4CAF50;
-    transition-duration: 0.4s;
     margin: 20px 20px 20px 20px;
     padding: 16px;
     color: white;
 } /* Green */
 .button2 {
     background-color: #008CBA;
-    transition-duration: 0.4s;
     margin: 20px 20px 20px 20px;
     padding: 16px;
     color: white;
 } /* Blue */
 .button3 {
     background-color: #f44336;
-    transition-duration: 0.4s;
     margin: 20px 20px 20px 20px;
-    padding: 16px 32px;
+    padding: 16px;
     color: white;
 } /* Red */
 .button4 {
     background-color: #555555;
-    transition-duration: 0.4s;
     margin: 20px 20px 20px 20px;
-    padding: 16px 32px;
+    padding: 16px;
     color: white;
 } /* Black */
 

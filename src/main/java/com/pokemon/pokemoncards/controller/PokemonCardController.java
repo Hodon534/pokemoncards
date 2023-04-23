@@ -56,10 +56,16 @@ public class PokemonCardController {
         return new ResponseEntity<>(updatePokemonCard, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<PokemonCard> deletePokemonCard(@PathVariable("id") String id) {
+    @DeleteMapping("/delete/id={id}")
+    public ResponseEntity<String> deletePokemonCard(@PathVariable("id") String id) {
         pokemonCardService.deletePokemonCard(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("Card has been deleted.", HttpStatus.OK);
+    }
+
+    @GetMapping("/delete/all")
+    public ResponseEntity<String> deleteAll() {
+        pokemonCardService.deleteAll();
+        return new ResponseEntity<>("All card has been deleted.", HttpStatus.OK);
     }
 
     @GetMapping("/add5cards")
@@ -68,7 +74,7 @@ public class PokemonCardController {
         for (PokemonCard pokemonCard : pokemonCardList.getPokemonCards()) {
             pokemonCardService.addPokemonCard(pokemonCard);
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("Done, 5 new Pokemon Cards has been added to Database.", HttpStatus.OK);
     }
 
 

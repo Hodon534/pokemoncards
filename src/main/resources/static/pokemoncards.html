@@ -13,14 +13,21 @@
 
 <div>
     <form action="/api/v1/pokemoncards/add5cards" method="get">
-        <button class="button1" type="submit">Get 5 Random Pokemon Cards!</button>
+        <button class="button1" type="submit">Add 5 Random Pokemon Cards to DB!</button>
     </form>
     <form action="/api/v1/pokemoncards/all" method="get">
         <button class="button2" type="submit">Show them All!</button>
     </form>
+    <form action="'/api/v1/pokemoncards/find/{id}" method="get">
+        <button class="button2" type="submit">Show card with ID number --> </button>
+        <input type="text" id="#find-id" name="id" placeholder="Type in ID number...">
+    </form>
     <form action="/api/v1/pokemoncards/delete/{id}" method="get">
         <button class="button3" type="submit">Delete card with ID number --> </button>
-        <input type="text" id="{id}" name="id" placeholder="Type ID...">
+        <input type="text" id="#delete-id" name="id" placeholder="Type in ID number...">
+    </form>
+    <form action="/api/v1/pokemoncards/delete/all" method="get">
+        <button class="button3" type="submit">Delete all cards in DB</button>
     </form>
 </div>
 

@@ -12,4 +12,5 @@ public interface PokemonCardRepository extends JpaRepository<PokemonCard, String
     void deletePokemonCardById(String id);
 
     Optional<PokemonCard> findPokemonCardById(String id);
+
 }

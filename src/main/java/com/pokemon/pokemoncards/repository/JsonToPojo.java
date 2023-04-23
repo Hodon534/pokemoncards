@@ -3,8 +3,10 @@ package com.pokemon.pokemoncards.repository;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pokemon.pokemoncards.model.pojo.PokemonCardList;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+
 
 public class JsonToPojo {
 

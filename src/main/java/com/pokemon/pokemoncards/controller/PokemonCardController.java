@@ -4,11 +4,17 @@ package com.pokemon.pokemoncards.controller;
 //todo L ResponseEntity
 
 import com.pokemon.pokemoncards.model.pojo.PokemonCard;
+import com.pokemon.pokemoncards.model.pojo.PokemonCardList;
+import com.pokemon.pokemoncards.repository.JsonToPojo;
+import com.pokemon.pokemoncards.repository.PokemonCardRepository;
+import com.pokemon.pokemoncards.service.ApiService;
 import com.pokemon.pokemoncards.service.PokemonCardService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -22,18 +28,18 @@ public class PokemonCardController {
     }
 
     @GetMapping("/test")
-    public String testResponse(){
+    public String testResponse() {
         return "ok!";
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<PokemonCard>> getAllPokemonCards(){
+    public ResponseEntity<List<PokemonCard>> getAllPokemonCards() {
         List<PokemonCard> pokemonCardList = pokemonCardService.findAllPokemonCards();
         return new ResponseEntity<>(pokemonCardList, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<PokemonCard> getPokemonCardById(@PathVariable("id") String id){
+    public ResponseEntity<PokemonCard> getPokemonCardById(@PathVariable("id") String id) {
         PokemonCard pokemonCard = pokemonCardService.findPokemonCardById(id);
         return new ResponseEntity<>(pokemonCard, HttpStatus.OK);
     }
@@ -55,4 +61,15 @@ public class PokemonCardController {
         pokemonCardService.deletePokemonCard(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/add5cards")
+    public ResponseEntity<String> addPokemonCardsToDB() throws IOException {
+        PokemonCardList pokemonCardList = JsonToPojo.parseJsonToObject(ApiService.requestData());
+        for (PokemonCard pokemonCard : pokemonCardList.getPokemonCards()) {
+            pokemonCardService.addPokemonCard(pokemonCard);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }

@@ -2,6 +2,7 @@ package com.pokemon.pokemoncards.service;
 
 import com.pokemon.pokemoncards.model.api.ApiLinkCreator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 //todo Number of cards = 16109, 3221 pages - 5 pageSize

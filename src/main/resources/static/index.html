@@ -1,32 +1,23 @@
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org"
-      lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Get Started</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pokemon Card Generator</title>
 </head>
 <body>
-<nav class="navbar" style="background-color: #e3f2fd" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="http://localhost:8080/">
-            <img src="images/pokemon-logo.png" alt="Pokemon logo" width="139" height="50">
-        </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-</nav>
+<ul class="topnav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pokemoncards.html">Pokemon Cards</a></li>
+</ul>
+
+<div style="padding:0 16px;">
+    <h2>Pokemon Card Generator</h2>
+    <p>Java Spring Boot application that handles requests to get json from Pokemon TCG API
+        (pokemontcg.io) and saves it to local MySQL database.</p>
+    <h4> </h4>
+</div>
 
 </body>
-
-<form action="/api/v1/pokemoncards/all" method="get">
-    <input type="submit" value="Show All Cards" />
-</form>
-
-<form action="/api/v1/pokemoncards/all" method="get">
-    <input type="submit" value="Show All Cards" />
-</form>
 </html>

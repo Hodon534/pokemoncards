@@ -1,12 +1,16 @@
 package com.pokemon.pokemoncards.model.api;
 
-import com.pokemon.pokemoncards.util.RandomPageSizeGenerator;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Random;
+
 
 public class ApiLinkCreator {
     private final String BASE_LINK = "https://api.pokemontcg.io/v2/cards";
-    @Autowired
-    RandomPageSizeGenerator randomPageSizeGenerator;
+
+    private final Random random = new Random();
 
     @Autowired
     public ApiLinkCreator() {
@@ -23,6 +27,10 @@ public class ApiLinkCreator {
     }
 
     private String getPage(){
-        return "?" + ApiSettings.PAGE.getKey() + "=" + randomPageSizeGenerator.getRandomPageSize(ApiSettings.PAGE.getValue());
+        return "?" + ApiSettings.PAGE.getKey() + "=" + getRandomPageSize(ApiSettings.PAGE.getValue());
+    }
+
+    public int getRandomPageSize(int pages){
+        return random.nextInt(1, pages);
     }
 }

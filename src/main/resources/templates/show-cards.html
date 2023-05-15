@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Show All Pokemon Cards</title>
+    </head>
+<body>
+
+<ul class="topnav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/cards">Pokemon Cards</a></li>
+    <li style="float:right"><a href="/register">Register</a></li>
+    <li style="float:right"><a href="/login">Login</a></li>
+</ul>
+
+<div class="grid-container">
+    <div th:each="card : ${cards}" class="grid-item">
+        <div th:text="${card.name}"></div>
+        <div th:text="${card.id}"></div>
+        <img th:src="${card.smallImage}" width="230">
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>img</th>
+    </tr>
+    <tr th:each="card:${cards}">
+        <td th:text="${card.id}"></td>
+        <td th:text="${card.name}"></td>
+        <img th:src="${card.smallImage}" width="300">
+    </tr>
+</table>
+</body>
+
+<div class="grid-container">
+    <div class="grid-item" th:each="card:${cards}">
+        <td th:text="${card.name}"></td>
+        <img th:src="${card.smallImage}" width="220">
+    </div>
+</div>
+
+</html>-->

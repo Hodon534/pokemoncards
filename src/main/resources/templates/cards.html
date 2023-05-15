@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<ul class="topnav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/cards">Pokemon Cards</a></li>
+    <li style="float:right"><a href="/register">Register</a></li>
+    <li style="float:right"><a href="/login">Login</a></li>
+</ul>
+
+<div>
+    <form action="/api/v1/pokemoncards/add5cards" method="get">
+        <button class="button1" type="submit">Add 5 Random Pokemon Cards to DB!</button>
+    </form>
+    <br>
+    <a href="showCards">
+        <button class="button2" type="submit" >Show them All!</button>
+    </a>
+    <br>
+    <form action="showSpecificCardById" method="get">
+        <button class="button2" type="submit">Show card with ID number: </button>
+        <input type="text" id="#find-id" name="id" placeholder="Type in ID number...">
+    </form>
+    <br>
+    <form action="showSpecificCardsByName" method="get">
+        <button class="button2" type="submit">Show card with Pokemon name: </button>
+        <input type="text" id="#find-name" name="name" placeholder="Type in Pokemon name...">
+    </form>
+    <br>
+    <form action="/api/v1/pokemoncards/delete/" method="get">
+        <button class="button3" type="submit">Delete card with ID number: </button>
+        <input type="text" id="#delete-id" name="id" placeholder="Type in ID number...">
+    </form>
+    <br>
+    <form action="/api/v1/pokemoncards/delete/all" method="get">
+        <button class="button3" type="submit">Delete all cards in DB</button>
+    </form>
+</div>
+
+</body>
+</html>
+l
+
+<!--
+    <form action="/api/v1/pokemoncards/find/" method="get">
+        <button class="button2" type="submit">Show card with ID number</button>
+<input type="text" id="#find-id" name="id" placeholder="Type in ID number...">
+</form>
+
+<form action="/api/v1/pokemoncards/all" method="get">
+    <button class="button2" type="submit" >Show them All!</button>
+</form>-->

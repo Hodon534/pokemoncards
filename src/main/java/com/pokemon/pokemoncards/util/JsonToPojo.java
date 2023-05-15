@@ -1,11 +1,14 @@
-package com.pokemon.pokemoncards.repository;
+package com.pokemon.pokemoncards.util;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pokemon.pokemoncards.model.pojo.PokemonCardList;
-import org.springframework.stereotype.Component;
+import com.pokemon.pokemoncards.model.dto.CardDto;
+import com.pokemon.pokemoncards.model.entity.CardEntity;
+import com.pokemon.pokemoncards.model.pojo.CardList;
 
+import java.io.DataInput;
 import java.io.IOException;
+
 
 
 public class JsonToPojo {
@@ -17,7 +20,9 @@ public class JsonToPojo {
         return initialObjectMapper;
     }
 
-    public static PokemonCardList parseJsonToObject(String input) throws IOException {
-        return objectMapper.readValue(input, PokemonCardList.class);
+    public static CardList parseJsonToObject(String input) throws IOException {
+        return objectMapper.readValue(input, CardList.class);
     }
+
+
 }

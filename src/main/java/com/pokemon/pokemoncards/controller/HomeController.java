@@ -1,0 +1,27 @@
+package com.pokemon.pokemoncards.controller;
+
+import com.pokemon.pokemoncards.model.registration.RegistrationRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+    @GetMapping("/")
+    public String getHomePage() {
+        return "index";
+    }
+
+    @GetMapping("/cards")
+    public String getCardsPage() {
+        return "cards";
+    }
+
+
+
+    @GetMapping("/login")
+    public String getLoginPage() {
+        return "login";
+    }
+}

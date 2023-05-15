@@ -2,7 +2,7 @@ package com.pokemon.pokemoncards.model.api;
 
 public enum ApiSettings implements ApiConstructor{
     PAGE("page", 3221),
-    PAGESIZE("pageSize", 5);
+    PAGE_SIZE("pageSize", 5);
 
     private final String key;
     private final int value;

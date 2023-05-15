@@ -1,7 +1,5 @@
 package com.pokemon.pokemoncards.model.api;
 
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Random;
@@ -23,7 +21,7 @@ public class ApiLinkCreator {
     }
 
     private String getPageSize(){
-        return "&" + ApiSettings.PAGESIZE.getKey() + "=" + ApiSettings.PAGESIZE.getValue();
+        return "&" + ApiSettings.PAGE_SIZE.getKey() + "=" + ApiSettings.PAGE_SIZE.getValue();
     }
 
     private String getPage(){

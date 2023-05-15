@@ -10,10 +10,10 @@ import java.util.ArrayList;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PokemonCardList
+public class CardList
 {
     @JsonProperty("data")
-    private ArrayList<PokemonCard> pokemonCards;
+    private ArrayList<Card> cards;
     private long page;
     private long pageSize;
     private long count;

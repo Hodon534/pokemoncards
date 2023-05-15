@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pokemon Card Generator</title>
+
+</head>
+<body>
+
+<ul class="topnav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/cards">Pokemon Cards</a></li>
+    <li style="float:right"><a href="/register">Register</a></li>
+    <li style="float:right"><a href="/login">Login</a></li>
+</ul>
+<div class="form">
+    <form  method="post"
+           th:action="@{/login}">
+        <div class="container">
+            <h1>Login</h1>
+            <p>Please fill in this form to login to your account.</p>
+            <hr>
+            <label for="username"><b>Enter Email</b></label>
+            <br>
+            <input type="email" placeholder="eg. john@mail.com" name="username" id="username" required>
+            <br>
+            <label for="password"><b>Password</b></label>
+            <br>
+            <input type="password" placeholder="********" name="password" id="password" required>
+            <hr>
+            <button type="submit" class="button-signin">Login</button>
+        </div>
+
+        <div class="container register">
+            <p>Don't have an account? <a href="/register">Register here</a>.</p>
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+</html>
+
+
+<!--
+<form
+        method="post"
+        th:action="@{/login}">
+
+    <div class="title">Login</div>
+
+    <div th:if="${param.error}">
+        <div class="error">Invalid credentials</div>
+    </div>
+
+    <label for="username" class="required">Email</label>
+    <input type="text" id="username" name="username"/>
+
+    <label for="password" class="required"> Password</label>
+    <input type="password" id="password" name="password" class="input pointer"/>
+    <input class="submit-button pointer" type="submit" value="Login">
+    <div class="account-question">Don't have an account? <a th:href="@{/register}">Register here</a></div>
+</form>
+
+<form
+        class="box"
+        method="post"
+        th:action="@{/login}">
+
+    <div class="title">Login</div>
+
+    <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+            <input
+                    class="input"
+                    type="email"
+                    id="username"
+                    placeholder="e.g. michael@example.com">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+            <input
+                    class="input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="********">
+        </div>
+    </div>
+
+    <button
+            class="button is-primary" type="submit">Sign in
+    </button>
+    <div class="account-question">Don't have an account? <a th:href="@{/register}">Register here</a></div>
+</form>
+
+
+-->

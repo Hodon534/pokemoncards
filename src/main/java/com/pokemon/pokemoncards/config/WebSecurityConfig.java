@@ -37,7 +37,8 @@ public class WebSecurityConfig {
                             auth.requestMatchers("/css/**").permitAll();
                             auth.requestMatchers("/register").permitAll();
                             auth.requestMatchers("/").permitAll();
-                            auth.requestMatchers("/**")
+                            auth.requestMatchers("/api/v1/**").permitAll();
+                            auth.requestMatchers("/cards", "/showCards", "show-cards-by-name", "show-card-by-id")
                                     .hasAnyAuthority(
                                             AppUserRole.USER.name(),
                                             AppUserRole.ADMIN.name());
@@ -77,16 +78,3 @@ public class WebSecurityConfig {
     }
 }
 
-      /*  http
-                .csrf().disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/api/v1/registration/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .formLogin()
-                //.loginPage("/login.html")
-                .and()
-                .httpBasic();
-*/

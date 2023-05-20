@@ -25,13 +25,8 @@ public class CardService {
         CardEntity cardEntity = new CardEntity(
                 card.getId(),
                 card.getName(),
-                card.getSupertype(),
-                card.getHp(),
-                card.getNumber(),
-                card.getEvolvesFrom(),
                 card.getTypes(),
-                card.getImages().getLarge(),
-                card.getImages().getSmall());
+                card.getImages().getLarge());
         return cardsRepo.save(cardEntity);
     }
 

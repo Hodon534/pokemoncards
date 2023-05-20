@@ -9,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * Application User Entity - data stored in DB
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
